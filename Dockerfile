@@ -12,5 +12,5 @@ RUN docker-php-ext-install gd
 RUN apt-get autoremove -y
 RUN apt-get clean
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" unlink('composer-setup.php'); } echo PHP_EOL;" && php composer-setup.php && php -r "unlink('composer-setup.php');"
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
